@@ -7,11 +7,12 @@ import {
   PRESET_D,
 } from '@/features/constants/koeiroParam'
 import { AIVoice } from '@/features/constants/settings'
-import { testVoice } from '@/features/messages/speakCharacter'
+import { testVoice, testVoiceNemo } from '@/features/messages/speakCharacter'
 import settingsStore from '@/features/stores/settings'
 import { Link } from '../link'
 import { TextButton } from '../textButton'
 import speakers from '../speakers.json'
+import speakersNemo from '../speakers_nemo.json'
 
 const Voice = () => {
   const koeiromapKey = settingsStore((s) => s.koeiromapKey)
@@ -24,6 +25,7 @@ const Voice = () => {
   const voicevoxSpeed = settingsStore((s) => s.voicevoxSpeed)
   const voicevoxPitch = settingsStore((s) => s.voicevoxPitch)
   const voicevoxIntonation = settingsStore((s) => s.voicevoxIntonation)
+  const voicevoxNemoSpeaker = settingsStore((s) => s.voicevoxNemoSpeaker)
   const stylebertvits2ServerUrl = settingsStore(
     (s) => s.stylebertvits2ServerUrl
   )
@@ -52,6 +54,7 @@ const Voice = () => {
           className="px-16 py-8 bg-surface1 hover:bg-surface1-hover rounded-8"
         >
           <option value="voicevox">{t('UsingVoiceVox')}</option>
+          <option value="voicevoxNemo">{t('UsingVoiceVoxNemo')}</option>
           <option value="koeiromap">{t('UsingKoeiromap')}</option>
           <option value="google">{t('UsingGoogleTTS')}</option>
           <option value="stylebertvits2">{t('UsingStyleBertVITS2')}</option>
@@ -206,6 +209,91 @@ const Voice = () => {
                     ))}
                   </select>
                   <TextButton onClick={() => testVoice()} className="ml-16">
+                    {t('TestVoice')}
+                  </TextButton>
+                </div>
+                <div className="my-24">
+                  <div className="select-none">
+                    {t('VoicevoxSpeed')}: {voicevoxSpeed}
+                  </div>
+                  <input
+                    type="range"
+                    min={0.5}
+                    max={2}
+                    step={0.01}
+                    value={voicevoxSpeed}
+                    className="mt-8 mb-16 input-range"
+                    onChange={(e) => {
+                      settingsStore.setState({
+                        voicevoxSpeed: Number(e.target.value),
+                      })
+                    }}
+                  ></input>
+                  <div className="select-none">
+                    {t('VoicevoxPitch')}: {voicevoxPitch}
+                  </div>
+                  <input
+                    type="range"
+                    min={-0.15}
+                    max={0.15}
+                    step={0.01}
+                    value={voicevoxPitch}
+                    className="mt-8 mb-16 input-range"
+                    onChange={(e) => {
+                      settingsStore.setState({
+                        voicevoxPitch: Number(e.target.value),
+                      })
+                    }}
+                  ></input>
+                  <div className="select-none">
+                    {t('VoicevoxIntonation')}: {voicevoxIntonation}
+                  </div>
+                  <input
+                    type="range"
+                    min={0.0}
+                    max={2.0}
+                    step={0.01}
+                    value={voicevoxIntonation}
+                    className="mt-8 mb-16 input-range"
+                    onChange={(e) => {
+                      settingsStore.setState({
+                        voicevoxIntonation: Number(e.target.value),
+                      })
+                    }}
+                  ></input>
+                </div>
+              </>
+            )
+          } else if (selectVoice === 'voicevoxNemo') {
+            return (
+              <>
+                <div>
+                  {t('VoiceVoxNemoInfo')}
+                  <br />
+                  <Link
+                    url="https://voicevox.hiroshiba.jp/"
+                    label="https://voicevox.hiroshiba.jp/"
+                  />
+                </div>
+                <div className="mt-16 font-bold">{t('SpeakerSelection')}</div>
+                <div className="flex items-center">
+                  <select
+                    value={voicevoxNemoSpeaker}
+                    onChange={(e) =>
+                      settingsStore.setState({
+                        voicevoxNemoSpeaker: e.target.value,
+                      })
+                    }
+                    className="px-16 py-8 bg-surface1 hover:bg-surface1-hover rounded-8"
+                  >
+                    <option value="">{t('Select')}</option>
+                    {speakersNemo.map((speaker) => (
+                      <option key={speaker.id} value={speaker.id}>
+                        {speaker.speaker}
+                      </option>
+                    ))}
+                  </select>
+                  <TextButton onClick={() => testVoiceNemo()} className="ml-16">
                     {t('TestVoice')}
                   </TextButton>
                 </div>

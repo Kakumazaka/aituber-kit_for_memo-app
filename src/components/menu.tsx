@@ -169,7 +169,7 @@ export const Menu = () => {
                   selectAIService as multiModalAIServiceKey
                 ) && (
                   <>
-                    <div className="order-3">
+                    {/* <div className="order-3">
                       <IconButton
                         iconName="24/ShareIos"
                         isProcessing={false}
@@ -206,7 +206,7 @@ export const Menu = () => {
                           }
                         }}
                       />
-                    </div>
+                    </div> */}
                   </>
                 )}
               {youtubeMode && (

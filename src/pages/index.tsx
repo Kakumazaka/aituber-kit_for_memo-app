@@ -1,3 +1,4 @@
+import { BottomButton } from '@/components/bottomButton'
 import { Form } from '@/components/form'
 import { Introduction } from '@/components/introduction'
 import { Menu } from '@/components/menu'
@@ -16,9 +17,10 @@ const Home = () => {
       <Meta />
       <Introduction />
       <VrmViewer />
-      <Form />
+      {/* <Form /> */}
       <Menu />
       <ModalImage />
+      <BottomButton />
     </div>
   )
 }

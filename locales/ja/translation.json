@@ -54,6 +54,8 @@
   "KoeiromapInfo": "KoemotionのKoeiromap APIを使用しています。日本語のみに対応しています。詳しくは下記をご覧ください。",
   "UsingVoiceVox": "VOICEVOXを使用する",
   "VoiceVoxInfo": "VOICEVOXを使用しています。日本語のみに対応しています。ローカルAPIを使用するので下記のサイトから環境にあったアプリをダウンロードし、起動しておく必要があります。",
+  "UsingVoiceVoxNemo": "VOICEVOX Nemoを使用する",
+  "VoiceVoxNemoInfo": "VOICEVOX Nemoを使用しています。日本語のみに対応しています。ローカルAPIを使用するので下記のサイトから環境にあったアプリをダウンロードし、起動しておく必要があります。",
   "VoicevoxSpeed": "話速",
   "VoicevoxPitch": "音高",
   "VoicevoxIntonation": "抑揚",

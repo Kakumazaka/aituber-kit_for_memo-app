@@ -21,7 +21,7 @@ const LanguageSetting = () => {
 
             const ss = settingsStore.getState()
             const jaVoiceSelected =
-              ss.selectVoice === 'voicevox' || ss.selectVoice === 'koeiromap'
+              ss.selectVoice === 'voicevox' || ss.selectVoice === 'voicevoxNemo' || ss.selectVoice === 'koeiromap'
 
             switch (newLanguage) {
               case 'ja':
