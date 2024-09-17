@@ -67,19 +67,19 @@ const Main = () => {
 
         <div className="my-40">
           {/* 外部接続モードの設定 */}
-          <WebSocket />
+          {/* <WebSocket /> */}
 
           {/* AI設定 */}
           <ModelProvider />
         </div>
 
-        <div className="my-24 typography-32 font-bold">
+        {/* <div className="my-24 typography-32 font-bold">
           {t('YoutubeSettings')}
-        </div>
+        </div> */}
 
         <div className="my-40">
           {/* YouTube設定 */}
-          <YouTube />
+          {/* <YouTube /> */}
         </div>
 
         <div className="my-24 typography-32 font-bold">
@@ -91,13 +91,13 @@ const Main = () => {
           <Voice />
         </div>
 
-        <div className="my-24 typography-32 font-bold">
+        {/* <div className="my-24 typography-32 font-bold">
           {t('SlideSettings')}
-        </div>
+        </div> */}
 
         <div className="my-40">
           {/* スライド設定 */}
-          <Slide />
+          {/* <Slide /> */}
         </div>
 
         <div className="my-24 typography-32 font-bold">

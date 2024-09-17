@@ -44,6 +44,7 @@ interface ModelProvider {
   voicevoxSpeed: number
   voicevoxPitch: number
   voicevoxIntonation: number
+  voicevoxNemoSpeaker: string
   stylebertvits2ServerUrl: string
   stylebertvits2ModelId: string
   stylebertvits2Style: string
@@ -111,7 +112,7 @@ const settingsStore = create<SettingsState>()(
       selectAIService: 'openai',
       selectAIModel: 'gpt-4o',
       localLlmUrl: '',
-      selectVoice: 'voicevox',
+      selectVoice: 'voicevoxNemo',
       koeiroParam: DEFAULT_PARAM,
       googleTtsType:
         process.env.NEXT_PUBLIC_GOOGLE_TTS_TYPE || 'en-US-Neural2-F',
@@ -119,6 +120,7 @@ const settingsStore = create<SettingsState>()(
       voicevoxSpeed: 1.0,
       voicevoxPitch: 0.0,
       voicevoxIntonation: 1.0,
+      voicevoxNemoSpeaker: '10007',
       stylebertvits2ServerUrl: 'http://127.0.0.1:5000',
       stylebertvits2ModelId: '0',
       stylebertvits2Style: 'Neutral',
@@ -180,6 +182,7 @@ const settingsStore = create<SettingsState>()(
         voicevoxSpeed: state.voicevoxSpeed,
         voicevoxPitch: state.voicevoxPitch,
         voicevoxIntonation: state.voicevoxIntonation,
+        voicevoxNemoSpeaker: state.voicevoxNemoSpeaker,
         stylebertvits2ServerUrl: state.stylebertvits2ServerUrl,
         stylebertvits2ModelId: state.stylebertvits2ModelId,
         stylebertvits2Style: state.stylebertvits2Style,
